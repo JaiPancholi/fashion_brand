@@ -9,6 +9,11 @@
 4. Build a predictor method to take in a new picture and classify them into a brand.
 
 
+
+# Clone Forked Facenet Repo
+
+
+
 git clone https://github.com/davidsandberg/facenet.git
 
 python facenet/src/align/align_dataset_mtcnn.py data/images/raw_test/ data/images/processed_facenet/
@@ -16,3 +21,33 @@ python facenet/src/align/align_dataset_mtcnn.py data/images/raw_test/ data/image
 python facenet/src/compare.py models/20180402-114759/ data/images/raw/tom_ford_male_69 data/images/raw/tom_ford_male_70 data/images/raw/tom_ford_male_71 data/images/raw/tom_ford_male_72 data/images/raw/tom_ford_male_73 data/images/raw/tom_ford_male_74 --image_size 160 --margin 32 --gpu_memory_fraction 0
 
 python facenet/src/export_embeddings.py models/20180402-114759/ data/images/processed_facenet/ 
+
+
+```bash
+git clone --recurse-submodules REPOSITORY
+```
+
+To pull changes on updates to submodules you can use
+```bash
+git submodule update --recursive --remote
+
+```
+### Adding Submodules
+```bash
+# first time only 
+git submodule update --init --recursive
+
+# any further time
+git submodule add https://jai_pancholi@bitbucket.org/digitalfineprint/data.engineering.companyhouse_account_parser.git enrichment/manual/data.engineering.companyhouse_account_parser
+```
+
+### Removing Submodules
+To remove a submodule you need to:
+
+- Delete the relevant section from the .gitmodules file.
+- Stage the .gitmodules changes git add .gitmodules
+- Delete the relevant section from .git/config.
+- Run git rm --cached path_to_submodule (no trailing slash).
+- Run rm -rf .git/modules/path_to_submodule (no trailing slash).
+- Commit git commit -m "Removed submodule <name>"
+- Delete the now untracked submodule files rm -rf path_to_submodule
