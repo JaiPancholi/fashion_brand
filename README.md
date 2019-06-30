@@ -22,24 +22,24 @@ python facenet/src/compare.py models/20180402-114759/ data/images/raw/tom_ford_m
 
 python facenet/src/export_embeddings.py models/20180402-114759/ data/images/processed_facenet/ 
 
-
-```bash
-git clone --recurse-submodules REPOSITORY
-```
-
-To pull changes on updates to submodules you can use
-```bash
-git submodule update --recursive --remote
-
-```
 ### Adding Submodules
 ```bash
 # first time only 
 git submodule update --init --recursive
 
 # any further time
-git submodule add https://jai_pancholi@bitbucket.org/digitalfineprint/data.engineering.companyhouse_account_parser.git enrichment/manual/data.engineering.companyhouse_account_parser
+git submodule add https://github.com/JaiPancholi/facenet.git facenet
 ```
+<!-- 
+```bash
+git clone --recurse-submodules REPOSITORY
+``` -->
+
+To pull changes on updates to submodules you can use
+```bash
+git submodule update --recursive --remote
+```
+
 
 ### Removing Submodules
 To remove a submodule you need to:
