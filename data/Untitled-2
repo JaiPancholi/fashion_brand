@@ -1,0 +1,1 @@
+python facenet/src/compare.py models/20180402-114759/ data/images/raw/tom_ford_male_69 data/images/raw/tom_ford_male_70 data/images/raw/tom_ford_male_71 data/images/raw/tom_ford_male_72 data/images/raw/tom_ford_male_73 data/images/raw/tom_ford_male_74 --image_size 160 --margin 32 --gpu_memory_fraction 0

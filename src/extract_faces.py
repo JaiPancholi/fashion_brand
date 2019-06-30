@@ -32,6 +32,7 @@ for filename in os.listdir(RAW_IMAGE_DIRECTORY):
     )
 
     # Draw a rectangle around the faces
+    # Extract faces
     for i, (x, y, w, h) in enumerate(faces):
         cv2.imwrite(PROCESSED_IMAGE_DIRECTORY+filename+'_'+str(i)+'.jpeg', image[y:y+h, x:x+w])
         cv2.rectangle(image, (x, y), (x+w, y+h), (0, 255, 0), 2)
